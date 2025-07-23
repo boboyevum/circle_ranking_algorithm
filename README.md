@@ -43,9 +43,12 @@ circle-ranks/
 
 ## Feed UI: Before and After
 
-| Before | After |
-|--------|-------|
-| ![Before](images/feed-before.png) | ![After](images/feed-after.png) |
+| Before |
+|--------|
+| ![Before](images/feed-before.png) |
+| After |
+|--------|
+| ![After](images/feed-after.png) |
 
 ## Potential Improvements
 - Add more features to the scoring model:
