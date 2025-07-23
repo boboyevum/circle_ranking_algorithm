@@ -46,6 +46,7 @@ circle-ranks/
 | Before |
 |--------|
 | ![Before](images/feed-before.png) |
+
 | After |
 |--------|
 | ![After](images/feed-after.png) |
