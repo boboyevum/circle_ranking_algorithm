@@ -7,13 +7,13 @@ PROCESSED_DATA_PATH = Path("data/processed/posts_clean.json")
 SCORED_DATA_PATH = Path("data/processed/posts_scored.json")
 
 AGE_BUCKETS = [
-    (0, 2),      # 0-2 days
-    (3, 5),      # 3-5 days
-    (6, 7),      # 6-7 days
-    (8, 14),     # 8-14 days
-    (15, 30),    # 15-30 days
-    (31, 90),    # 31-90 days
-    (91, 10000), # >90 days
+    (0, 2),
+    (3, 5),
+    (6, 7),
+    (8, 14),
+    (15, 30),
+    (31, 90),
+    (91, 10000),
 ]
 
 WEIGHTS = {
