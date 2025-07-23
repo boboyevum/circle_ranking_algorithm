@@ -45,7 +45,7 @@ circle-ranks/
 
 | Before | After |
 |--------|-------|
-| ![Before](images/before.png) | ![After](images/after.png) |
+| ![Before](images/feed-before.png) | ![After](images/feed-after.png) |
 
 ## Potential Improvements
 - Add more features to the scoring model:
