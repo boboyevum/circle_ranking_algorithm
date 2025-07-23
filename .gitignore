@@ -1,3 +1,5 @@
 # Ignore large data files
 /data/raw/*.json
 /data/processed/*.json 
+# Ignore macOS system files
+.DS_Store 
