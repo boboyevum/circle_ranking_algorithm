@@ -9,10 +9,11 @@ app = Flask(__name__)
 SCORED_PATH = os.path.join(os.path.dirname(__file__), 'data', 'processed', 'posts_scored.json')
 
 def get_plain_text(html):
-    if not html:
-        return ''
+    if not isinstance(html, (str, bytes)):
+        print(f"Warning: html is of type {type(html)}, value: {html}")
+        html = str(html)
     soup = BeautifulSoup(html, 'html.parser')
-    return soup.get_text(separator=' ', strip=True)
+    return soup.get_text()
 
 def get_time_ago(published_at):
     if not published_at:
@@ -66,7 +67,11 @@ def feed():
         user_name = post.get('user_name') or 'Unknown User'
         user_avatar = post.get('user_avatar_url')
         title = post.get('name')
-        body_html = post.get('body', '')
+        body_field = post.get('body', '')
+        if isinstance(body_field, dict):
+            body_html = body_field.get('body', '')
+        else:
+            body_html = body_field or ''
         body = get_plain_text(body_html)
         likes = post.get('likes_count', 0)
         comments = post.get('comments_count', 0)
