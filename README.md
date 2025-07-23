@@ -1,7 +1,7 @@
 # Circle Feed Ranking Algorithm
 
 ## Project Goal
-The goal is to build a ranking algorithm for Circle's feed to improve user engagement and user experience. The aim is to show users the most relevant, interesting, and fresh posts, rather than just the most popular or the most recent.
+The goal is to build a ranking algorithm for Circle's feed to improve user engagement and user experience. The aim is to show users the most relevant, interesting, and fresh posts, rather than just the most recent.
 
 ## Folder Structure
 ```
@@ -22,7 +22,7 @@ circle-ranks/
 1. **Data Fetching:**
    - Used `scripts/fetching.py` to pull raw post data from the source.
 2. **Data Processing:**
-   - Cleaned and normalized the data with `scripts/processing.py`.
+   - Cleaned the data with `scripts/processing.py`.
 3. **Exploration:**
    - Explored the data in `notebooks/exploration.ipynb` to understand post engagement, recency, and other patterns.
 4. **Scoring & Ranking:**
@@ -37,7 +37,7 @@ circle-ranks/
   - 8-14 days
   - 15-30 days
   - 31-90 days
-  - >90 days
+  - \>90 days
 - Posts are scored within each bucket using normalized likes, comments, and recency (with exponential decay). The top of the feed is always filled with the highest-scoring posts from the freshest buckets first, so recency is always prioritized.
 - The output is a new, scored dataset of posts, ordered by score, ready to be used for the new feed.
 
