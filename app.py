@@ -140,6 +140,38 @@ def feed():
             letter-spacing: -0.5px;
             font-family: 'Inter', Arial, sans-serif;
         }
+        .feed-sort-bar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 16px;
+            margin: 32px auto 0 auto;
+            max-width: 700px;
+            padding-left: 0;
+        }
+        .feed-sort-btn {
+            background: #23252b;
+            color: #A3A6AB;
+            border: none;
+            border-radius: 999px;
+            padding: 10px 32px;
+            font-size: 0.9em;
+            font-weight: 400;
+            font-family: 'Inter', Arial, sans-serif;
+            cursor: not-allowed;
+            outline: none;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            transition: background 0.2s, color 0.2s;
+            margin-bottom: 0;
+            margin-top: 0;
+            letter-spacing: 0.01em;
+        }
+        .feed-sort-btn.active {
+            background: #3b3d8a;
+            color: #fff;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(90,93,240,0.10);
+        }
         .feed-container {
             max-width: 700px;
             margin: 40px auto 0 auto;
@@ -370,6 +402,11 @@ def feed():
 </head>
 <body>
     <div class="top-bar">Circle's Advanced Feed</div>
+    <div class="feed-sort-bar">
+        <button class="feed-sort-btn active" disabled>Top</button>
+        <button class="feed-sort-btn" disabled>Hot</button>
+        <button class="feed-sort-btn" disabled>Recent</button>
+    </div>
     <div class="feed-container">
         {% for post in posts %}
         <div class="post-card">

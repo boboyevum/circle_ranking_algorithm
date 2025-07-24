@@ -1,8 +1,17 @@
 import requests
 import json
 from pathlib import Path
+import os
+from dotenv import load_dotenv
 
-API_TOKEN = "***REMOVED***"
+dotenv_path = os.path.join(os.path.dirname(__file__), '..', '.env')
+loaded = load_dotenv(dotenv_path=dotenv_path)
+
+API_TOKEN = os.environ.get("CIRCLE_API_TOKEN")
+
+if not API_TOKEN:
+    raise RuntimeError("CIRCLE_API_TOKEN environment variable not set. Please set it in your .env file.")
+    
 HEADERS = {
     "Authorization": f"Bearer {API_TOKEN}",
     "Content-Type": "application/json"
